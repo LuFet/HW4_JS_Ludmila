@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Задание 1
+        Разработайте класс Human (человек). Создайте массив объектов и реализуйте функцию, которая будет
+        сортировать элементы массива по значению свойства Age по возрастанию или по убыванию.
+        */
+        class Human{
+            constructor(name,age){
+                this.name=name;
+                this.age=age;
+            }                                  
+        }
+       
+        let people=[];
+        people[0]=new Human("Tanja",12);
+        people[1]=new Human("Katja",5);
+        people[2]=new Human("Njuta",3);
+        people[3]=new Human("Pavel",18);
+        people[4]=new Human("Anja",4);
+        people[5]=new Human("Katja",5);
+        people[6]=new Human("Uta",1);
+        people[7]=new Human("Oleg",14);
+        
+        let people1=[];
+        people1[0]=new Human("Tanja",12);
+        people1[1]=new Human("Katja",5);
+        people1[2]=new Human("Njuta",3);
+        people1[3]=new Human("Pavel",18);
+        people1[4]=new Human("Anja",4);
+        people1[5]=new Human("Katja",5);
+        people1[6]=new Human("Uta",1);
+        people1[7]=new Human("Oleg",14);
+       
+    /* asc
+    */
+    function SortbyAgeAsc(myArray){
+        myArray.sort(function(a,b){ 
+                return a.age-b.age;
+        }); 
+        console.log(myArray);
+    }
+/*desc*/
+    function SortbyAgeDesc(myArray1){
+        myArray1.sort(function(a,b){ 
+                return b.age-a.age;
+        });  
+        console.log(myArray1);
+    }
+    SortbyAgeAsc(people);
+    SortbyAgeDesc(people1);
+    </script>
+</body>
+</html>
+

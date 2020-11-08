@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Задание 2
+        Разработайте класс Human (человек), добавьте на свое усмотрение свойства и методы в этот объект.
+        Подумайте, какие методы и свойства следует оставить в родительском классы, а какие перенести в
+        дочерние классы Student, Worker, Manager. Создайте экземпляры этих классов
+        */
+        class Human{
+            constructor(firstname, lastname, age, address, language){
+                this.firstname=firstname;
+                this.lastname=lastname;
+                this.age=age;
+                this.address=address;
+                this.language=language;
+            }   
+            talk() {
+                document.write("Hello My Name is " + this.firstname + this.lastname+"<br />")
+            }         
+        }
+        class Student extends Human{
+            constructor(firstname,lastname,subject, uni){
+                super(firstname,lastname);
+                this.subject=subject;
+                this.uni=uni;
+            }         
+            talk() {
+                document.write("I am a Student of "+this.uni +"<br />");
+            }     
+        }
+        class Worker{
+            constructor(speciality,company){
+                this.speciality=speciality;
+                this.company=company;
+            }   
+            talk() {
+                document.write("I am a "+this.speciality+"<br />");
+            }          
+        }
+        class Manager{
+            constructor(company){
+                this.company=company;
+            }   
+            talk() {
+                document.write("I am a Manager of company "+this.company+"<br />");
+            }            
+        }
+        let Alex=new Worker("Alex","Teacher","Scool n2");
+        Alex.talk();
+        let Petr=new Student("Petr","Pavlov","Programmer","Cambridge");
+        Petr.talk();
+        let Tanja=new Manager("lanskaja","Simens");
+        Tanja.talk();
+        let Katja= new Human("Katja","Ivanova",12,"Sibir","Russian");
+        Katja.talk();
+    </script>
+</body>
+</html>
